@@ -67,19 +67,20 @@ Ext.define('net_builder.controller.Templates', {
          // ########################
          Ext.Ajax.request({
           withCredentials:true,
-         cors:true,
-         url: 'http://20.0.2.225:8088/net_builder/config_templates/1/',
-         method: 'POST',
-         disableCaching: true,
-         beforeSend : function(req) {
-           req.setRequestHeader('Authorization', Base64.encode('root:password'));
-         },
-         headers: { 'Content-Type': 'application/json'},
-         scope:this,
-         disableCaching:true,
-         jsonData: Ext.encode(values),
-         success: this.onSuccess,
-         failure: this.onFailure
+          cors:true,
+          //url: 'http://20.0.2.225:8080/net_builder/config_templates/1/',
+          url: 'http://'+MyVariables.myRequest_server+'/net_builder/config_templates/'+MyVariables.template_id+'/',
+          method: 'POST',
+          disableCaching: true,
+          beforeSend : function(req) {
+            req.setRequestHeader('Authorization', Base64.encode('root:password'));
+          },
+          headers: { 'Content-Type': 'application/json'},
+          scope:this,
+          disableCaching:true,
+          jsonData: Ext.encode(values),
+          success: this.onSuccess,
+          failure: this.onFailure
          }); // end of Ext.Ajax.request({
    },
    onSuccess: function(response, opts){

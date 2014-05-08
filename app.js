@@ -10,7 +10,7 @@ Ext.Loader.setConfig({
 // #################################################
 Ext.define('MyVariables',{
  singleton: true,
- ajax_response_server: '20.0.2.225:8088',
+ myRequest_server: '20.0.2.225:8080',
  template_id:'',
  template_params:[]
 });

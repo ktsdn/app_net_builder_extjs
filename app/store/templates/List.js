@@ -9,7 +9,7 @@ Ext.define('net_builder.store.templates.List', {
         getParams: Ext.emptyFn,
 
         api: {
-         read: 'http://'+MyVariables.ajax_response_server+'/net_builder/config_templates/',
+         read: 'http://'+MyVariables.myRequest_server+'/net_builder/config_templates/',
         },
         reader: {
          type: 'json',
