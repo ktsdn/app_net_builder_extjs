@@ -179,7 +179,7 @@ Ext.define('net_builder.controller.Templates', {
        console.log(grid);
        setInterval(function(){
          grid.store.load();
-       }, 120000);
+       }, MyVariables.reLoad_time);
     },
 
    windownOpen_CreatConfiguration: function(grid, record){

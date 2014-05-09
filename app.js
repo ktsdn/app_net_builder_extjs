@@ -10,7 +10,8 @@ Ext.Loader.setConfig({
 // #################################################
 Ext.define('MyVariables',{
  singleton: true,
- myRequest_server: '20.0.2.225:8080',
+ myRequest_server: '192.168.42.135:8080',
+ reLoad_time:30000,
  template_id:'',
  template_params:[],
  configures_builder_name:''
