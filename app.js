@@ -12,7 +12,8 @@ Ext.define('MyVariables',{
  singleton: true,
  myRequest_server: '20.0.2.225:8080',
  template_id:'',
- template_params:[]
+ template_params:[],
+ configures_builder_name:''
 });
 
 // #################################################
@@ -38,19 +39,20 @@ Ext.application({
     name: 'net_builder',
 
     appFolder: 'app',
-    controllers: [ 'Templates' ],
+    controllers: [ 'Templates',
+                   'Configures' ],
 
     launch: function() {
         Ext.create('Ext.container.Viewport', {
 
             layout: 'accordion',
             items:[{
-                     title: 'Templates',
+                     title: 'Show the templates list',
                      xtype: 'templateslist',
             },
             {
-                     title: 'Panel 2',
-                     html: 'Content'
+                     title: 'Show the configuration list',
+                     xtype: 'configureslist',
             }
             ]
 
