@@ -229,10 +229,10 @@ Ext.define('net_builder.controller.Templates', {
      else{
       Ext.MessageBox.alert(jsonData[0].error_details);
      }
-     console.dir(jsonData);
    },
-   onFailure: function(err){
-     Ext.MessageBox.alert("error");
+   onFailure: function(response, err){
+     var jsonData = Ext.decode(response.responseText);
+     Ext.MessageBox.alert(jsonData.detail);
    }
    
    
