@@ -1,6 +1,7 @@
 // #################################################
 // # disable default values for get method request #
 // #################################################
+Ext.Loader.config.disableCaching = false;
 Ext.Loader.setConfig({
     disableCaching: false
 });
@@ -10,8 +11,8 @@ Ext.Loader.setConfig({
 // #################################################
 Ext.define('MyVariables',{
  singleton: true,
- myRequest_server: '192.168.42.135:8080',
- reLoad_time:30000,
+ myRequest_server: '20.0.2.225:8080',
+ reLoad_time:10000,
  template_id:'',
  template_params:[],
  configures_builder_name:''

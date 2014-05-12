@@ -159,7 +159,9 @@ Ext.define('net_builder.controller.Configures', {
          'Remove_configuration button[action=remove]':{
                      click: this.removeConfiguration
          },
-
+         'Remove_configuration button[action=details]':{
+                     click: this.showConfiguration_details
+         },
        }); // end of this.control({
     }, // end of init: function() {
 
@@ -213,11 +215,11 @@ Ext.define('net_builder.controller.Configures', {
                         'Authorization': 'Basic '+Base64.encode(local_auth_string)},
              scope:this,
              disableCaching:true,
-             success: this.onSuccess,
-             failure: this.onFailure
-     });
+             success: this.onSuccess_rm,
+             failure: this.onFailure_rm
+         });
    },
-   onSuccess: function(response, opts){
+   onSuccess_rm: function(response, opts){
      var jsonData = Ext.decode(response.responseText);
      if (jsonData[0].running_status=='success'){
       Ext.MessageBox.alert(jsonData[0].success_details);
@@ -226,9 +228,81 @@ Ext.define('net_builder.controller.Configures', {
       Ext.MessageBox.alert(jsonData[0].error_details);
      }
    },
-   onFailure: function(response, err){
+   onFailure_rm: function(response, err){
      var jsonData = Ext.decode(response.responseText);
      Ext.MessageBox.alert(jsonData.detail);
-   } 
+   },
+   
+   showConfiguration_details: function(button){
+         var win    = button.up('window'),
+         form   = win.down('form'),
+         record = form.getRecord(),
+         values = form.getValues();
+         win.close();
+
+         local_auth_username=values.auth_username;
+         local_auth_password=values.auth_password;
+         local_auth_string=local_auth_username+':'+local_auth_password;
+         // ########################
+         // # ajax post transmit   #
+         // ########################
+         Ext.Ajax.request({
+             withCredentials:true,
+             cors:true,
+             url: 'http://'+MyVariables.myRequest_server+'/net_builder/mgmtsw_list/'+MyVariables.configures_builder_name+'/',
+             method: 'GET',
+             disableCaching: false,
+             // #####################################
+             // # basic authentication ajax request #
+             // #####################################
+             headers: { 'Content-Type': 'text/plain',
+                        'Authorization': 'Basic '+Base64.encode(local_auth_string)},
+             scope:this,
+             success: this.onSuccess_details,
+             failure: this.onFailure_details
+         });
+   },
+
+   onSuccess_details: function(response, opts){
+     var msg = '';
+     var jsonData = Ext.decode(response.responseText);
+     if (jsonData.running_status=='success'){
+      // ############################
+      // # builder_name information #
+      // ############################
+      msg =  msg + 'builder_name are [ '
+      for (var i=0, len=jsonData.builder_name.length; i<len; i++){
+       msg = msg + jsonData.builder_name[i]
+      };
+      msg =  msg + ' ]<br>'
+      // ############################
+      // # mgmt_network information #
+      // ############################
+      msg =  msg + 'mgmt_network are [ '
+      for (var i=0, len=jsonData.mgmt_network.length; i<len; i++){
+       msg = msg + jsonData.mgmt_network[i]
+      };
+      msg =  msg + ' ]<br>'
+      // ############################
+      // # srv_network information  #
+      // ############################
+      msg =  msg + 'srv_network are [ '
+      for (var i=0, len=jsonData.srv_network.length; i<len; i++){
+       msg = msg + jsonData.srv_network[i]
+      };
+      msg =  msg + ' ]<br>'
+      // ############################
+      // # view all information     #
+      // ############################
+      Ext.MessageBox.alert(msg);
+     }
+     else{
+      Ext.MessageBox.alert(jsonData[0].error_details);
+     }
+   },
+   onFailure_details: function(response, err){
+     var jsonData = Ext.decode(response.responseText);
+     Ext.MessageBox.alert(jsonData.detail);
+   }
 
 });

@@ -2,7 +2,7 @@ Ext.define('net_builder.view.configures.Remove_configuration', {
     extend: 'Ext.window.Window',
     alias: 'widget.Remove_configuration',
 
-    title: 'create the configuration',
+    title: 'Remove the configuration',
     layout: 'fit',
     autoShow: true,
 
@@ -26,6 +26,10 @@ Ext.define('net_builder.view.configures.Remove_configuration', {
         ];
 
         this.buttons = [
+            {
+                text: 'Details',
+                action: 'details'
+            },
             {
                 text: 'Remove',
                 action: 'remove'
