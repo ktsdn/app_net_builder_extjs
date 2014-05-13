@@ -268,14 +268,6 @@ Ext.define('net_builder.controller.Configures', {
      var jsonData = Ext.decode(response.responseText);
      if (jsonData.running_status=='success'){
       // ############################
-      // # builder_name information #
-      // ############################
-      msg =  msg + 'builder_name are [ '
-      for (var i=0, len=jsonData.builder_name.length; i<len; i++){
-       msg = msg + jsonData.builder_name[i]
-      };
-      msg =  msg + ' ]<br>'
-      // ############################
       // # mgmt_network information #
       // ############################
       msg =  msg + 'mgmt_network are [ '
