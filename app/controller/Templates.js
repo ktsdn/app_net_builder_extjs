@@ -141,7 +141,9 @@ Ext.define('net_builder.controller.Templates', {
     models: [ 'templates.List' ],
     stores: [ 'templates.List' ],
     views: [ 'templates.List',
-             'templates.Id_1' ],
+             'templates.Id_1',
+             'templates.Id_2',
+             'templates.Id_3' ],
 
     // ############################
     // # action definition        #
@@ -157,6 +159,12 @@ Ext.define('net_builder.controller.Templates', {
                      itemdblclick: this.windownOpen_CreatConfiguration
          },
          'Id_1 button[action=create]':{
+                     click: this.createTemplate
+         },
+         'Id_2 button[action=create]':{
+                     click: this.createTemplate
+         },
+         'Id_3 button[action=create]':{
                      click: this.createTemplate
          }
 
