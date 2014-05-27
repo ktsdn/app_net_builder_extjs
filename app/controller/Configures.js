@@ -288,6 +288,9 @@ Ext.define('net_builder.controller.Configures', {
       // ############################
       Ext.MessageBox.alert(msg);
      }
+     else if (jsonData.running_status=='sample'){
+      Ext.MessageBox.alert('this is sample');
+     }
      else{
       Ext.MessageBox.alert(jsonData[0].error_details);
      }

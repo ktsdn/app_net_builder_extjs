@@ -11,11 +11,12 @@ Ext.Loader.setConfig({
 // #################################################
 Ext.define('MyVariables',{
  singleton: true,
- myRequest_server: '20.0.2.225:8080',
+ myRequest_server: '20.0.2.224:8080',
  reLoad_time:10000,
  template_id:'',
  template_params:[],
- configures_builder_name:''
+ configures_builder_name:'',
+ detail_activate_in_remove_view: true
 });
 
 // #################################################
