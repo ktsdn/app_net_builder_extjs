@@ -142,6 +142,7 @@ Ext.define('net_builder.controller.Templates', {
     stores: [ 'templates.List' ],
     views: [ 'templates.List',
              'templates.Id_1000',
+             'templates.Id_1001',
              'templates.Id_1',
              'templates.Id_2',
              'templates.Id_3' ],
@@ -162,6 +163,9 @@ Ext.define('net_builder.controller.Templates', {
          'Id_1000 button[action=create]':{
                      click: this.createTemplate
          },
+         'Id_1001 button[action=create]':{
+                     click: this.createTemplate
+         }, 
          'Id_1 button[action=create]':{
                      click: this.createTemplate
          },
