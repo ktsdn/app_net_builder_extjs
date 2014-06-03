@@ -10,36 +10,49 @@ Ext.define('net_builder.view.templates.Id_3', {
         this.items = [
             {
                 xtype: 'form',
+                width: 500,
                 items: [
                     {
                         xtype: 'textfield',
                         name : 'auth_username',
-                        fieldLabel: 'auth_username'
+                        fieldLabel: 'User Name',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'auth_password',
-                        fieldLabel: 'auth_password'
+                        fieldLabel: 'Password',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_swname',
-                        fieldLabel: 'mgmt_swname'
+                        fieldLabel: 'MGMT Name(CA5-E-KR1B-25-MG-03R01)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
-                        name : 'mgmt_desc_uptor',
-                        fieldLabel: 'mgmt_desc_uptor'
+                        name : 'mgmt_portno_uptor',
+                        fieldLabel: 'Port No for UPSW(G1/0/1,1)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
-                        name : 'mgmt_desc_downtor',
-                        fieldLabel: 'mgmt_desc_downtor'
+                        name : 'mgmt_portno_downtor',
+                        fieldLabel: 'Port No for DNsw(G1/0/2,2)',
+                        anchor:'100%',
+                        labelWidth: 250  
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_network',
-                        fieldLabel: 'mgmt_network'
+                        fieldLabel: 'MGMT Network(10.0.1.0/24)',
+                        anchor:'100%',
+                        labelWidth: 250  
                     }
                 ]
             }

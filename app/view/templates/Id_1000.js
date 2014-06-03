@@ -10,36 +10,49 @@ Ext.define('net_builder.view.templates.Id_1000', {
         this.items = [
             {
                 xtype: 'form',
+                width: 500,
                 items: [
                     {
                         xtype: 'textfield',
                         name : 'auth_username',
-                        fieldLabel: 'auth_username'
+                        fieldLabel: 'User Name',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'auth_password',
-                        fieldLabel: 'auth_password'
+                        fieldLabel: 'Password',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_swname',
-                        fieldLabel: 'mgmt_swname'
+                        fieldLabel: 'MGMT Name(CA5-E-KR1B-25-MG-03R01)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
-                        name : 'mgmt_desc',
-                        fieldLabel: 'mgmt_desc'
+                        name : 'mgmt_portno',
+                        fieldLabel: 'Port No for SW(G1/0/1,1)',
+                        anchor:'100%',
+                        labelWidth: 250 
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_ipnet',
-                        fieldLabel: 'mgmt_ipnet'
+                        fieldLabel: 'MGMT IP/Subnet(10.0.1.1/24)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'gateway_ip',
-                        fieldLabel: 'gateway_ip'
+                        fieldLabel: 'MGMT Gateway IP(10.0.1.254)',
+                        anchor:'100%',
+                        labelWidth: 250
                     }
                 ]
             }

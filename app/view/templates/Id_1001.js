@@ -10,46 +10,63 @@ Ext.define('net_builder.view.templates.Id_1001', {
         this.items = [
             {
                 xtype: 'form',
+                width: 500,
                 items: [
                     {
                         xtype: 'textfield',
                         name : 'auth_username',
-                        fieldLabel: 'auth_username'
+                        fieldLabel: 'User Name',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'auth_password',
-                        fieldLabel: 'auth_password'
+                        fieldLabel: 'Password',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_swname',
-                        fieldLabel: 'mgmt_swname'
+                        fieldLabel: 'MGMT Name(CA5-E-KR1B-25-MG-03R01)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
-                        name : 'mgmt_desc_uptor',
-                        fieldLabel: 'mgmt_desc_uptor'
+                        name : 'mgmt_portno_uptor',
+                        fieldLabel: 'Port No for UPsw(G1/0/1,1)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
-                        name : 'mgmt_desc_downtor',
-                        fieldLabel: 'mgmt_desc_downtor'
+                        name : 'mgmt_portno_downtor',
+                        fieldLabel: 'Port No for DNsw(G1/0/2,2)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_ip_uptor',
-                        fieldLabel: 'mgmt_ip_uptor'
+                        fieldLabel: 'MGMT IP/Subnet for UPsw(10.0.1.1/24)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_ip_downtor',
-                        fieldLabel: 'mgmt_ip_downtor'
+                        fieldLabel: 'MGMT IP/Subnet for DNsw(10.0.1.2/24)',
+                        anchor:'100%',
+                        labelWidth: 250
                     },
                     {
                         xtype: 'textfield',
                         name : 'mgmt_gateway_vip',
-                        fieldLabel: 'mgmt_gateway_vip'
+                        fieldLabel: 'MGMT Gateway IP(10.0.1.254)',
+                        anchor:'100%',
+                        labelWidth: 250
                     }
                 ]
             }

@@ -14,12 +14,12 @@ Ext.define('net_builder.view.configures.Remove_configuration', {
                     {
                         xtype: 'textfield',
                         name : 'auth_username',
-                        fieldLabel: 'auth_username'
+                        fieldLabel: 'User Name'
                     },
                     {
                         xtype: 'textfield',
                         name : 'auth_password',
-                        fieldLabel: 'auth_password'
+                        fieldLabel: 'Password'
                     }
                 ]
             }
