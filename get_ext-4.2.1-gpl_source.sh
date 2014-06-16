@@ -22,7 +22,8 @@ then
  rm -rf $extjs_downloaded_zip
  matched_filename=`ls | grep -i '^ext-'$extjs_downloaded_version`
  mv $matched_filename ./extjs
- chmod 766 ./extjs
+ chmod 777 ./extjs
+ chmod 777 ./app.js
 
 fi
 
