@@ -18,6 +18,7 @@ Ext.define('net_builder.view.configures.Remove_configuration', {
                     },
                     {
                         xtype: 'textfield',
+                        inputType:'password',
                         name : 'auth_password',
                         fieldLabel: 'Password'
                     }

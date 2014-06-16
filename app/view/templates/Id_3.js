@@ -21,6 +21,7 @@ Ext.define('net_builder.view.templates.Id_3', {
                     },
                     {
                         xtype: 'textfield',
+                        inputType:'password',
                         name : 'auth_password',
                         fieldLabel: 'Password',
                         anchor:'100%',

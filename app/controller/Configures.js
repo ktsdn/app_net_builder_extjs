@@ -153,6 +153,7 @@ Ext.define('net_builder.controller.Configures', {
                      // #######################
                      // # refresh method      #
                      // #######################
+                     render: this.onPanelRendered,
                      afterrender: this.onGridAfterRender,
                      itemdblclick: this.windownOpen_removeConfiguration
          },
@@ -170,15 +171,23 @@ Ext.define('net_builder.controller.Configures', {
    // # function definition      #
    // ############################
    onPanelRendered: function(){
-         console.log('Initialized Users! This happens before the Application launch function is called');
-    
+        var store = Ext.create('Ext.data.Store', {
+            model: "Login"
+        });
+        if(store.read().data.keys.length){
+         MyVariables.login_token_from_django = store.read().data.items[0].data.JWT_token;
+         Ext.util.Cookies.clear('jwt_token'); 
+         Ext.util.Cookies.set('jwt_token',MyVariables.login_token_from_django);
+        } else{
+          window.location.href = 'index.html';
+        }; 
    },
 
    // ############################
    // # refresh method           #
    // ############################
    onGridAfterRender: function(grid){
-       console.log(grid);
+       // console.log(grid);
        setInterval(function(){
          grid.store.load();
        }, MyVariables.reLoad_time);
