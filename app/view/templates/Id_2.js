@@ -29,6 +29,21 @@ Ext.define('net_builder.view.templates.Id_2', {
                     },
                     {
                         xtype: 'textfield',
+                        name : 'user_username',
+                        fieldLabel: 'Switch User Name',
+                        anchor:'100%',
+                        labelWidth: 250
+                    },
+                    {
+                        xtype: 'textfield',
+                        inputType:'password',
+                        name : 'user_password',
+                        fieldLabel: 'Switch User Password',
+                        anchor:'100%',
+                        labelWidth: 250
+                    },
+                    {
+                        xtype: 'textfield',
                         name : 'mgmt_swname',
                         fieldLabel: 'MGMT Name(CA5-E-KR1B-25-MG-03R01)',
                         anchor:'100%',
